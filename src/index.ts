@@ -23,7 +23,28 @@
     }
     return getSingle;
   }
-  console.log(removeDuplicates([1, 6, 2, 2, 3, 3, 4, 4, 4, 5, 4, 4, 1, 1]));
+  // console.log(removeDuplicates([1, 6, 2, 2, 3, 3, 4, 4, 4, 5, 4, 4, 1, 1]));
+
+  // problem 3
+  function countWordOccurrences(param1: string, param2: string): number {
+    const stringArray: string[] = param1
+      .toLowerCase()
+      .replace("!", "")
+      .split(" ");
+    let count: number = 0;
+    for (let index = 0; index < stringArray.length; index++) {
+      if (stringArray[index] === param2.toLowerCase()) {
+        count++;
+      }
+    }
+    return count;
+  }
+  console.log(
+    countWordOccurrences(
+      "TypeScript is great. I love TypeScript!",
+      "typescript"
+    )
+  );
 
   //
 }
