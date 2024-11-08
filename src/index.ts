@@ -146,7 +146,7 @@
     return keyArray.every((key) => key in myObj);
   }
 
-  console.log(validateKeys(person2, ["name", "age"]));
+  // console.log(validateKeys(person2, ["name", "age"]));
 
   //
 }
