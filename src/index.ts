@@ -79,16 +79,34 @@
     name: string;
     age: number;
   };
-  function getProperty2(param1: Person, param2: keyof Person): string | number {
-    const OwenVelue = param2;
-    return param1[OwenVelue];
-  }
+  // function getProperty(param1: Person, param2: keyof Person): string | number {
+  //   const OwenVelue = param2;
+  //   return param1[OwenVelue];
+  // }
   function getProperty<T, K extends keyof T>(myObj: T, key: K): T[K] {
     return myObj[key];
   }
   const person: Person = { name: "Alice", age: 30 };
-  console.log(getProperty(person, "name"));
-  console.log(getProperty2(person, "name"));
+  // console.log(getProperty(person, "name"));
+
+  // Problem 6
+  interface Profile {
+    name: string;
+    age: number;
+    email: string;
+  }
+  const myProfile: Profile = {
+    name: "Alice",
+    age: 25,
+    email: "alice@example.com",
+  };
+  function updateProfile(
+    myObj: Profile,
+    updatesObj: Partial<Profile>
+  ): Profile {
+    return { ...myObj, ...updatesObj };
+  }
+  // console.log(updateProfile(myProfile, { age: 26 }));
 
   //
 }
